@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <button type="button" id="highscore">Highscores</button>
+    <div id="highscore-tab">
+        <button id="exithighscore" class="exittab">X</button>
+        <table id="scores">
+            <tr>
+                <th>Place</th>
+                <th>Easy peasy</th>
+                <th>Easy</th>
+                <th>Normal</th>
+                <th>Hard</th>
+                <th>Don't even try</th>
+            </tr>
+            <tr data-place="1">
+                <td>1<sup>st</sup></td>
+                <td data-dif="Easy peasy"></td>
+                <td data-dif="Easy"></td>
+                <td data-dif="Normal"></td>
+                <td data-dif="Hard"></td>
+                <td data-dif="Don't even try"></td>
+            </tr>
+            <tr data-place="2">
+                <td>2<sup>nd</sup></td>
+                <td data-dif="Easy peasy"></td>
+                <td data-dif="Easy"></td>
+                <td data-dif="Normal"></td>
+                <td data-dif="Hard"></td>
+                <td data-dif="Don't even try"></td>
+            </tr>
+            <tr data-place="3">
+                <td>3<sup>rd</sup></td>
+                <td data-dif="Easy peasy"></td>
+                <td data-dif="Easy"></td>
+                <td data-dif="Normal"></td>
+                <td data-dif="Hard"></td>
+                <td data-dif="Don't even try"></td>
+            </tr>
+            <tr data-place="4">
+                <td>4<sup>th</sup></td>
+                <td data-dif="Easy peasy"></td>
+                <td data-dif="Easy"></td>
+                <td data-dif="Normal"></td>
+                <td data-dif="Hard"></td>
+                <td data-dif="Don't even try"></td>
+            </tr>
+            <tr data-place="5">
+                <td>5<sup>th</sup></td>
+                <td data-dif="Easy peasy"></td>
+                <td data-dif="Easy"></td>
+                <td data-dif="Normal"></td>
+                <td data-dif="Hard"></td>
+                <td data-dif="Don't even try"></td>
+            </tr>
+        </table>
+        <div class="clear-container">
+            <button type="button" id="clear">Clear leaderboard</button>
+        </div>
+    </div>
+    <div class="center-container">
+        <h1 id="title">SCL Quiz!</h1>
+    </div>
+    <section id="intro">
+        <p id="desc">Welcome to our quiz. Press start and let's begin!</p>
+        <div class="center-container">
+            <div class="custom-select">
+                <select id="dif">
+                    <option style="display: none"> Select Difficulty</option>
+                    <option value="Easy peasy">Easy peasy</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Don't even try">Don't even try</option>
+                </select>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="start-container">
+            <button id="info">Info</button>
+            <div class="absolute-container">
+                <button id="start">Start</button>
+            </div>
+            <button id="settings"><img src="src/images/setting-gear1.png" alt="setting-gear" id="gear"></button>
+        </div>
+        <section id="infotab">
+
+            <table id="infotable">
+                <tr class="infotableunit">
+                    <th>Difficulty</th>
+                    <th>Question Level</th>
+                    <th>Lives</th>
+                    <th>Time</th>
+                </tr>
+                <tr class="tdeasy">
+                    <td>Easy Peasy</td>
+                    <td>Easy</td>
+                    <td><img src="src/images/Full_HP.png" alt="full-heart"><img src="src/images/Full_HP.png" alt="full-heart"><img src="src/images/Half_HP.png" alt="half-heart"></td>
+                    <td>120 sec</td>
+                </tr>
+                <tr class="tdeasy">
+                    <td>Easy</td>
+                    <td>Easy</td>
+                    <td><img src="src/images/Full_HP.png" alt="full-heart"><img src="src/images/Full_HP.png" alt="full-heart"></td>
+                    <td>60 sec</td>
+                </tr>
+                <tr class="tdmedium">
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td><img src="src/images/Full_HP.png" alt="full-heart"><img src="src/images/Half_HP.png" alt="half-heart"></td>
+                    <td>30 sec</td>
+                </tr>
+                <tr class="tdmedium">
+                    <td>Hard</td>
+                    <td>Medium</td>
+                    <td><img src="src/images/Full_HP.png" alt="full-heart"></td>
+                    <td>15 sec</td>
+                </tr>
+                <tr class="tdhard">
+                    <td>Don't Even Try</td>
+                    <td>Hard</td>
+                    <td><img src="src/images/Half_HP.png" alt="half-heart"></td>
+                    <td>10 sec</td>
+                </tr>
+            </table>
+            <button id="exitinfo" class="exittab">X</button>
+            
+        </section>
+
+            </div>
+            
+        </div>
+        <section id="settingstab">
+            <div class="volume-container">
+                <p id="volume-indicator">Volume:</p><input type="range" id="volume-control" min="0" max="100" value="100"><p id="show-volume">100%</p>
+            </div>
+            <button id="exitsettings" class="exittab">X</button>
+        </section>
+        
+    </section>
+    <section id="quiz">
+        <div id="timer"></div>
+        <div class="question-container">
+            <h2 id="question"></h2>
+        </div>
+        <div class="question-container">
+            <hr class="divider">
+        </div>
+        <div class="option-container">
+            <button type="button" class="answer" data-answer="1"></button><button type="button" class="answer" data-answer="2"></button><button type="button" class="answer" data-answer="3"></button><button type="button" class="answer" data-answer="4"></button>
+        </div>
+        <div class="center-container">
+            <div id="healthbar"></div>
+        </div>
+        <p id="realtime-score"></p>
+    </section>
+        <section id="gameover">
+            <div class="center-container">
+                <h2 id="gameover-title">Game over!</h2>
+            </div>
+            <div class="center-container">
+                <hr class="divider">
+            </div>
+            <p id="difficulty"></p>
+            <p id="score"></p>
+            <span id="set-nick">Name:</span>
+            <div id="input-container">
+                <input type="text" id="nick" placeholder="Save your highscore" maxlength="12">
+                <button type="button"id="save">Save</button>
+            </div>
+            <div class="center-container">
+                <button type="button" id="restart">Restart</button>
+            </div>
+        </section>
+    <footer class="center-container">
+        <p id="sig">&copy; Shocktone & Calculada & Luca, 2022</p>
+    </footer>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
